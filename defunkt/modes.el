@@ -11,6 +11,7 @@
 (load "defunkt/coffee")
 (load "defunkt/markdown")
 (load "defunkt/css")
+(load "defunkt/lua")
 
 ;; all modes
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -64,7 +65,7 @@
              (define-key c-mode-map "{" 'defunkt/c-electric-brace)))
 
 ;; mustache
-(add-to-list 'auto-mode-alist '("\\.mustache$" . tpl-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache$" . mustache-mode))
 
 ;; textmate.el
 (vendor 'textmate)
