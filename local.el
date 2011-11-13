@@ -71,27 +71,6 @@
 (set-tabs-local 4 1)
 (make-tabs-global)
 
-(global-set-key
- "\C-H"
- '(lambda ()
-    "Insert HTPL block"
-    (interactive)
-    (let ((name (read-string "Name: "))
-          (start (min (region-beginning) (region-end)))
-          (end (max (region-beginning) (region-end))))
-      (save-excursion
-        (goto-char end)
-        (back-to-indentation)
-        (insert "<!--- END: " name " --->")
-        (newline-and-indent)
-        (previous-line)
-        (indent-according-to-mode)
-        (goto-char start)
-        (back-to-indentation)
-        (insert "<!--- BEGIN: " name " --->")
-        (newline-and-indent)))))
-
-
 (defun mark-line (arg)
   (interactive "p")
   (beginning-of-line nil)
